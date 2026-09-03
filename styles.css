@@ -1,0 +1,511 @@
+/* ================================
+   CSS CUSTOM PROPERTIES
+   🎨 CHANGE COLORS HERE EASILY!
+================================ */
+:root {
+    /* --- COLORS --- */
+    --color-primary: #7a8c5c;       /* Olive green - change to any color */
+    --color-secondary: #c4a882;     /* Warm tan - change to any color */
+    --color-accent: #d4a853;        /* Gold accent - change to any color */
+    --color-dark: #2c2c2c;          /* Dark text */
+    --color-light: #faf8f4;         /* Cream background */
+    --color-white: #ffffff;
+    --color-gray: #888888;
+    --color-border: #e8e0d5;
+
+    /* --- FONTS --- */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --font-script: 'Playfair Display', serif;
+
+    /* --- SIZES --- */
+    --navbar-height: 80px;
+    --section-padding: 80px 60px;
+    --border-radius: 8px;
+}
+
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ================================
+   ANNOUNCEMENT BAR
+   🎨 Change background-color to customize
+================================ */
+.announcement-bar {
+    background-color: var(--color-primary); /* 🎨 Change bar color */
+    color: var(--color-white);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   NAVIGATION
+   🎨 Change navbar background & link colors
+================================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white); /* 🎨 Change navbar bg */
+    padding: 0 40px;
+    height: var(--navbar-height);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-left a,
+.nav-right a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-dark); /* 🎨 Change nav link color */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: var(--color-primary); /* 🎨 Change hover color */
+}
+
+/* Center Logo */
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-logo .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 2px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-script {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--color-primary); /* 🎨 Change script color */
+}
+
+.logo-main {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-dark); /* 🎨 Change logo name color */
+    letter-spacing: 1px;
+}
+
+/* ================================
+   HERO / STORY SECTION
+   🎨 Change background & text colors
+================================ */
+.hero-story {
+    text-align: center;
+    padding: 60px 40px 0;
+    background-color: var(--color-light); /* 🎨 Change hero bg */
+}
+
+.hero-label {
+    margin-bottom: 30px;
+}
+
+.script-text {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-primary); /* 🎨 Change script color */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hero-label h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-dark); /* 🎨 Change heading color */
+}
+
+/* Hero Banner Image */
+.hero-image-banner {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    background-color: var(--color-secondary); /* 🎨 Placeholder color if no image */
+}
+
+.banner-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    /* 🖼️ Replace src="egypt-banner.jpg" in HTML with your image */
+}
+
+/* ================================
+   ABOUT SECTION
+   🎨 Change section background & text
+================================ */
+.about-section {
+    padding: var(--section-padding);
+    background-color: var(--color-white); /* 🎨 Change about bg */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.about-grid.reverse {
+    direction: rtl; /* Flips column order */
+}
+
+.about-grid.reverse > * {
+    direction: ltr; /* Reset text direction */
+}
+
+/* About Images */
+.about-image-left img,
+.about-image-right img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    /* 🖼️ Replace src in HTML with your own photos */
+}
+
+/* About Text */
+.about-text-right h2,
+.about-text-left h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-dark); /* 🎨 Change heading color */
+    margin-bottom: 20px;
+}
+
+.about-text-right p,
+.about-text-left p {
+    font-size: 0.95rem;
+    color: var(--color-gray); /* 🎨 Change paragraph color */
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* Outline Button */
+.btn-outline {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1.5px solid var(--color-dark); /* 🎨 Change border color */
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-dark); /* 🎨 Change hover bg */
+    color: var(--color-white);
+}
+
+/* ================================
+   SERVICES SECTION
+   🎨 Change section background & card styles
+================================ */
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 3rem;
+    padding: 1rem 2rem;
+}
+
+.service-item {
+    text-align: center;
+    padding: 1rem 2rem;
+    border-left: 2px solid var(--accent);
+}
+
+.service-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.service-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+.services {
+    padding: var(--section-padding);
+    background-color: var(--color-light); /* 🎨 Change services bg */
+    text-align: center;
+}
+
+.services h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-dark); /* 🎨 Change heading color */
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 🎨 Change columns count */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Service Card */
+.service-card {
+    background-color: var(--color-white); /* 🎨 Change card bg */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-img-wrap img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    /* 🖼️ Replace each src in HTML with your own service images */
+}
+
+/* Wishlist Heart Button */
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--color-gray); /* 🎨 Change wishlist icon color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    color: #e74c3c; /* 🎨 Change heart hover color */
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-dark); /* 🎨 Change card title color */
+    padding: 15px 15px 5px;
+}
+
+.service-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray); /* 🎨 Change card text color */
+    padding: 0 15px 15px;
+}
+
+/* ================================
+   FOOTER
+   🎨 Change footer background & text colors
+================================ */
+.footer {
+    background-color: var(--color-light); /* 🎨 Change footer bg */
+    padding: 60px 60px 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.footer-logo .logo-script {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--color-primary); /* 🎨 Change footer script color */
+}
+
+.footer-logo .logo-main {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-dark); /* 🎨 Change footer logo color */
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--color-dark); /* 🎨 Change footer heading color */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 0.9rem;
+    color: var(--color-gray); /* 🎨 Change footer link color */
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-primary); /* 🎨 Change footer link hover */
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    color: var(--color-gray); /* 🎨 Change footer text color */
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--color-primary); /* 🎨 Change footer contact link color */
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--color-dark);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-gray); /* 🎨 Change copyright color */
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-label h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-grid,
+    .about-grid.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .services {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
